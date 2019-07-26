@@ -3,7 +3,7 @@ var list = [];
 
 for (var i = 0; i < movies.length; i++) {
 	document.getElementById("article-container").innerHTML += `<article><img class="article-img" src="${movies[i].poster}" alt="moviePoster from JSON"><div class="article-text"><h3>${movies[i].name}</h3><p>${movies[i].info}</p><div class="like-box"><button id="${i}"class="like-btn"><span>Like</span><img src="img/like_green.png"></button><div id="like${i}" class="like-counter">${movies[i].likes}</div></div></article>`;
-		list.push([movies[i].likes, i]);
+		list.push([movies[i].likes, i]); // creates initial array to replace elements when button clicked
 }
 console.log("array created after rendering the boxes ", list);
 
@@ -18,8 +18,6 @@ function addLike(i){
 	var likesCircle = document.getElementById(`like${i}`); 
 	// console.log(likesCircle); // test if eleent is reached / OK
 	likesCircle.innerHTML = `${movies[i].likes}`; // changes the value displayed in green circle
-	list[i] = [movies[i].likes,Number(i)];
-	console.log("array created after each click on like button ", list);
 }
 
 // eventListener on sorting button function to sort movies 
@@ -27,22 +25,32 @@ var sortButton = document.getElementById("sort");
 sortButton.addEventListener("click", sortMovies, false);
 
 function sortMovies() {
-	console.log("hello from sorting button");
-
+	for (var i = 0; i < movies.length; i++) {
+		list[i] = [movies[i].likes,Number(i)];
+	}
+	console.log("array created after each click on like button ", list, i);
+	
 	list.sort(function(a,b) {
 		return b[0] - a[0];
 	});
+	console.log("result of sorting is ", list); //result is an object
 
-console.log("result of sorting is ", list); //result is an object
+	document.getElementById("article-container").innerHTML = "";
 
-document.getElementById("article-container").innerHTML = "";
+	var button = document.getElementsByClassName("like-btn"); 
 
-for (var i = 0; i < list.length; i++) {
-	var loc = list[i][1];
-	console.log(loc, typeof loc);
-	document.getElementById("article-container").innerHTML += `<article><img class="article-img" src="${movies[loc].poster}" alt="moviePoster from JSON"><div class="article-text"><h3>${movies[loc].name}</h3><p>${movies[loc].info}</p><div class="like-box"><button id="${loc}"class="like-btn"><span>Like</span><img src="img/like_green.png"></button><div id="like${loc}" class="like-counter">${movies[loc].likes}</div></div></article>`;
-	}
+	for (var i = 0; i < list.length; i++) {
+		var loc = list[i][1];
+		document.getElementById("article-container").innerHTML += `<article><img class="article-img" src="${movies[loc].poster}" alt="moviePoster from JSON"><div class="article-text"><h3>${movies[loc].name}</h3><p>${movies[loc].info}</p><div class="like-box"><button id="${loc}"class="like-btn"><span>Like</span><img src="img/like_green.png"></button><div id="like${loc}" class="like-counter">${movies[loc].likes}</div></div></article>`;
+		}
+
+	for (var i = 0; i < list.length; i++) {
+		var loc = list[i][1];
+		button[loc].addEventListener("click", function(){addLike(this.getAttribute("id"))}, false);
+	}	
 }
+
+
 
 // TESTING AREA
 // console.log("Hello"); - testing connection between html / js files
