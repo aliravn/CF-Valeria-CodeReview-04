@@ -44,12 +44,53 @@ main
 	display: flex
 	flex-flow: column
 	align-items: center
-
 	h2
 		margin: 2vw auto
 		color: #EBEBEB
 		font-weight: normal
 		font-size: 3.5vw
+
+#article-container
+	display: flex
+	flex-wrap: wrap
+	width: 100%
+
+article
+	background-color: #101010
+	width: 40%
+	display: flex
+	h3, p
+		margin: 0
+	img
+		width: 30%
+	div
+		width: 70%	
+
+.like-box
+	display: flex
+	justify-content: flex-end
+	align-items: center
+	margin-right: 1vw
+	margin-bottom: 1vw
+	button
+		background: none
+		border: none
+	span
+		margin: 0 0.3vw
+		font-size: 3vw
+		color: #2fa33b
+	img
+		height: 3vw
+		margin-right: 0.5vw
+	div
+		width: 7.5vw
+		height: 7.5vw
+		border-radius: 7.5vw /*w=h=br => cirle*/
+		background-color: #2fa33b
+		display: flex
+		justify-content: center
+		align-items: center
+		font-size: 5vw
 
 /*======== FOOTER SECTION =========*/
 footer

@@ -45,6 +45,48 @@ main {
     font-weight: normal;
     font-size: 3.5vw; }
 
+#article-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%; }
+
+article {
+  background-color: #101010;
+  width: 40%;
+  display: flex; }
+  article h3, article p {
+    margin: 0; }
+  article img {
+    width: 30%; }
+  article div {
+    width: 70%; }
+
+.like-box {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 1vw;
+  margin-bottom: 1vw; }
+  .like-box button {
+    background: none;
+    border: none; }
+  .like-box span {
+    margin: 0 0.3vw;
+    font-size: 3vw;
+    color: #2fa33b; }
+  .like-box img {
+    height: 3vw;
+    margin-right: 0.5vw; }
+  .like-box div {
+    width: 7.5vw;
+    height: 7.5vw;
+    border-radius: 7.5vw;
+    background-color: #2fa33b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5vw; }
+
 /*======== FOOTER SECTION ========= */
 footer {
   width: 100%;
