@@ -35,10 +35,12 @@ function sortMovies() {
 
 console.log("result of sorting is ", list); //result is an object
 
+document.getElementById("article-container").innerHTML = "";
+
 for (var i = 0; i < list.length; i++) {
 	var loc = list[i][1];
 	console.log(loc, typeof loc);
-	document.getElementById("article-container").innerHTML = `<article><img class="article-img" src="${movies[loc].poster}" alt="moviePoster from JSON"><div class="article-text"><h3>${movies[loc].name}</h3><p>${movies[loc].info}</p><div class="like-box"><button id="${loc}"class="like-btn"><span>Like</span><img src="img/like_green.png"></button><div id="like${loc}" class="like-counter">${movies[loc].likes}</div></div></article>`;
+	document.getElementById("article-container").innerHTML += `<article><img class="article-img" src="${movies[loc].poster}" alt="moviePoster from JSON"><div class="article-text"><h3>${movies[loc].name}</h3><p>${movies[loc].info}</p><div class="like-box"><button id="${loc}"class="like-btn"><span>Like</span><img src="img/like_green.png"></button><div id="like${loc}" class="like-counter">${movies[loc].likes}</div></div></article>`;
 	}
 }
 
