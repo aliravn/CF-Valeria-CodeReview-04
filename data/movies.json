@@ -1,31 +1,31 @@
 var movies = [{
-	"movieName": "Jumanji (1995)",
+	"movieName": "Jumanji",
 	"moviePoster": "img/poster_jumanji.jpg",
 	"movieInfo": "When two kids find and play a magical board game, they release a man trapped for decades in it and a host of dangers that can only be stopped by finishing the game.",
 	"movieLikes": 0,
 }, {
-	"movieName": "The Lake House (2006)",
+	"movieName": "The Lake House",
 	"moviePoster": "img/poster_lake_house.jpg",
 	"movieInfo": "Doctor, who once occupied a lakeside house, begins exchanging letters with its former resident. They must unravel the mystery behind their extraordinary romance before it is too late.",
 	"movieLikes": 0,
 }, {
-	"movieName": "Die Hard (1988)",
+	"movieName": "Die Hard",
 	"moviePoster": "img/poster_die_hard.jpg",
 	"movieInfo": "An NYPD officer tries to save his wife and several others taken hostage by German terrorists during a Christmas party at the Nakatomi Plaza in Los Angeles.",
 	"movieLikes": 0,
 },{
-	"movieName": "One Piece (1999)",
+	"movieName": "One Piece",
 	"moviePoster": "img/poster_one_piece.jpg",
-	"movieInfo": "Adventures of Monkey D. Luffy and his friends in order to find the greatest treasure ever left by the legendary Pirate, Gol D Roger. The famous mystery treasure named 'One Piece'",
+	"movieInfo": "Adventures of Monkey D. Luffy and his friends in order to find the greatest treasure ever left by the legendary Pirate, Gol D Roger. The famous mystery treasure named 'One Piece'.",
 	"movieLikes": 0,
 },{
-	"movieName": "Back to the Future (1985)",
+	"movieName": "Back to the Future",
 	"moviePoster": "img/poster_back_to_the_future.jpg",
 	"movieInfo": "Marty McFly, a 17-year-old high school student, is accidentally sent thirty years into the past in a time-traveling DeLorean invented by his close friend, the maverick scientist Doc Brown.",
 	"movieLikes": 0,
 },{
-	"movieName": "The Matrix (1999)",
+	"movieName": "The Matrix",
 	"moviePoster": "img/poster_matrix.jpg",
-	"movieInfo": "A computer hacker learns from mysterious rebels about the true nature of his reality and his supposed role in the war against its controllers. One of the best blockbusters of all times.",
+	"movieInfo": "Computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers. One of the best blockbusters of all times.",
 	"movieLikes": 0,
 }];
