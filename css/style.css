@@ -48,25 +48,41 @@ main {
 #article-container {
   display: flex;
   flex-wrap: wrap;
-  width: 100%; }
+  justify-content: space-between;
+  width: 96%;
+  margin: 4vw auto; }
 
 article {
   background-color: #101010;
-  width: 40%;
-  display: flex; }
-  article h3, article p {
-    margin: 0; }
+  width: 45%;
+  height: 22.5vw;
+  display: flex;
+  align-items: space-between;
+  padding: 0.5vw 1vw;
+  margin-bottom: 6vw; }
+  article h3 {
+    margin: 0;
+    font-size: 2vw; }
+  article p {
+    margin: 0;
+    font-size: 1.5vw;
+    margin-bottom: 1vw;
+    margin-right: 0.5vw; }
   article img {
-    width: 30%; }
-  article div {
-    width: 70%; }
+    width: 35%;
+    margin-right: 0.5vw;
+    border-radius: 5px; }
+
+.article-text {
+  width: 70%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between; }
 
 .like-box {
   display: flex;
   justify-content: flex-end;
-  align-items: center;
-  margin-right: 1vw;
-  margin-bottom: 1vw; }
+  align-items: center; }
   .like-box button {
     background: none;
     border: none; }
@@ -75,7 +91,7 @@ article {
     font-size: 3vw;
     color: #2fa33b; }
   .like-box img {
-    height: 3vw;
+    width: 3vw;
     margin-right: 0.5vw; }
   .like-box div {
     width: 7.5vw;
