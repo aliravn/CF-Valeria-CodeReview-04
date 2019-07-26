@@ -39,11 +39,31 @@ main {
   display: flex;
   flex-flow: column;
   align-items: center; }
-  main h2 {
-    margin: 2vw auto;
-    color: #EBEBEB;
-    font-weight: normal;
-    font-size: 3.5vw; }
+
+#main-header {
+  width: 96%;
+  height: 5vw;
+  display: flex;
+  align-items: baseline;
+  margin: 2vw auto 1vw; }
+
+h2 {
+  margin: 0;
+  font-weight: normal;
+  font-size: 3vw;
+  color: #EBEBEB;
+  flex-grow: 2;
+  text-align: center;
+  margin-left: 8vw; }
+
+#sort {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 2.5vw;
+  color: #EBEBEB; }
+  #sort span {
+    font-size: 3vw; }
 
 #article-container {
   display: flex;
@@ -52,6 +72,7 @@ main {
   width: 96%;
   margin: 4vw auto; }
 
+/*======== ARTICLE SECTION (rendered by JS code) ========= */
 article {
   background-color: #101010;
   width: 45%;
@@ -95,14 +116,14 @@ article {
     width: 3vw;
     margin-right: 0.5vw; }
   .like-box div {
-    width: 7.5vw;
-    height: 7.5vw;
-    border-radius: 7.5vw;
+    width: 7vw;
+    height: 7vw;
+    border-radius: 7vw;
     background-color: #2fa33b;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 5vw; }
+    font-size: 4vw; }
 
 /*======== FOOTER SECTION ========= */
 footer {
