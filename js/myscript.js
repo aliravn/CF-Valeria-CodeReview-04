@@ -1,8 +1,11 @@
+var button = document.getElementsByClassName("like-btn"); //will be an array
+var list = [];
+
 for (var i = 0; i < movies.length; i++) {
 	document.getElementById("article-container").innerHTML += `<article><img class="article-img" src="${movies[i].poster}" alt="moviePoster from JSON"><div class="article-text"><h3>${movies[i].name}</h3><p>${movies[i].info}</p><div class="like-box"><button id="${i}"class="like-btn"><span>Like</span><img src="img/like_green.png"></button><div id="like${i}" class="like-counter">${movies[i].likes}</div></div></article>`;
+		list.push([movies[i].likes, i]);
 }
-
-var button = document.getElementsByClassName("like-btn"); //will be an array
+console.log("array created after rendering the boxes ", list);
 
 for (var i = 0; i < button.length; i++) {
 	button[i].addEventListener("click", function(){addLike(this.getAttribute("id"))}, false);
@@ -15,41 +18,29 @@ function addLike(i){
 	var likesCircle = document.getElementById(`like${i}`); 
 	// console.log(likesCircle); // test if eleent is reached / OK
 	likesCircle.innerHTML = `${movies[i].likes}`; // changes the value displayed in green circle
+	list[i] = [movies[i].likes,Number(i)];
+	console.log("array created after each click on like button ", list);
 }
 
+// eventListener on sorting button function to sort movies 
 var sortButton = document.getElementById("sort");
 sortButton.addEventListener("click", sortMovies, false);
 
-function sortMovies(multidimArr_with_i_and_movies_i_movieLikes) {
-	console.log("hello from sort function");
+function sortMovies() {
+	console.log("hello from sorting button");
+
+	list.sort(function(a,b) {
+		return b[0] - a[0];
+	});
+
+console.log("result of sorting is ", list); //result is an object
+
+for (var i = 0; i < list.length; i++) {
+	var loc = list[i][1];
+	console.log(loc, typeof loc);
+	document.getElementById("article-container").innerHTML = `<article><img class="article-img" src="${movies[loc].poster}" alt="moviePoster from JSON"><div class="article-text"><h3>${movies[loc].name}</h3><p>${movies[loc].info}</p><div class="like-box"><button id="${loc}"class="like-btn"><span>Like</span><img src="img/like_green.png"></button><div id="like${loc}" class="like-counter">${movies[loc].likes}</div></div></article>`;
+	}
 }
-
-
-
-
-
-
-// function ItemConstructor(name, price, id) {
-//     this.likes = likes;
-//     this.id = id;
-// }
-
-// function addToCart(i) {
-//     var cartItem = new ItemConstructor(products[i].name, products[i].price, i);
-//     cart.push(cartItem);
-//     console.log(cart);
-//     largeoutput.innerHTML += `<div id"${i}"><img src="${products[i].pic}"><p>${cart[i].name}</p><p>Price: ${cart[i].price} </p></div>`;
-    // alert("Product has been added. Please view your shopping cart for details");
-// }
-
-// function sortMovies(multidimArr_with_i_and_movies_i_movieLikes) {
-// 		var sortingList = [];
-// 		for (var i = 0, i < movies.length, i++) {
-// 			push.
-// 		}
-// }
-
-
 
 // TESTING AREA
 // console.log("Hello"); - testing connection between html / js files
