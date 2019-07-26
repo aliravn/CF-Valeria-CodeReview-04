@@ -1,6 +1,7 @@
 // testing connection between html / js / json files
 // console.log("Hello");
-// console.log(movies[1].movieName);
+console.log(movies[1].movieLikes);
+console.log(typeof movies[1].movieLikes);
 var button = document.getElementsByClassName("like-btn"); //will be an array
 //console.log(button);
 
@@ -13,3 +14,8 @@ for (var i = 0; i < button.length; i++) {
 	button[i].addEventListener("click", function(){addLike(this.getAttribute("id"))}, false);
 }
 
+function addLike(i){
+	console.log("hello from button" + i);
+	movies[i].movieLikes += 1;
+	console.log(movies[i].movieLikes);
+}
