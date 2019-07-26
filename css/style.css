@@ -58,16 +58,8 @@ article {
   height: 22.5vw;
   display: flex;
   align-items: space-between;
-  padding: 0.5vw 1vw;
+  padding: 1vw;
   margin-bottom: 6vw; }
-  article h3 {
-    margin: 0;
-    font-size: 2vw; }
-  article p {
-    margin: 0;
-    font-size: 1.5vw;
-    margin-bottom: 1vw;
-    margin-right: 0.5vw; }
   article img {
     width: 35%;
     margin-right: 0.5vw;
@@ -78,6 +70,15 @@ article {
   display: flex;
   flex-flow: column;
   justify-content: space-between; }
+  .article-text h3 {
+    margin: 0;
+    font-size: 2vw; }
+  .article-text p {
+    margin: 0;
+    font-size: 1.5vw;
+    margin-bottom: 1vw;
+    margin-right: 0.5vw;
+    align-self: flex-start; }
 
 .like-box {
   display: flex;
