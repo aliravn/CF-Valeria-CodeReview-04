@@ -1,7 +1,10 @@
 /*======== VARIABLES ========= */
 /*======== BODY ========= */
 body {
-  margin: 0 auto; }
+  margin: 0 auto;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  background-color: #171E25; }
 
 /*======== HEADER SECTION ========= */
 /*======== NAVBAR SECTION ========= */
