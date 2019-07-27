@@ -33,6 +33,8 @@ nav {
     font-weight: bold;
     font-size: 3vw;
     margin-left: 2vw; }
+    nav a:hover {
+      color: #ffa929; }
 
 /*======== MAIN SECTION ========= */
 main {
@@ -95,7 +97,7 @@ article {
   justify-content: space-between; }
   .article-text h3 {
     margin: 0;
-    font-size: 2.5vw; }
+    font-size: 2.7vw; }
   .article-text p {
     margin: 0;
     font-size: 1.5vw;
@@ -134,10 +136,12 @@ footer {
   height: 14vw;
   background-color: #000000;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  margin-top: 22vw; }
   footer p {
     margin: 0;
     align-self: center;
-    font-size: 3.5vw; }
+    font-size: 3.5vw;
+    color: #ffffff; }
 
 /*# sourceMappingURL=style.css.map */
