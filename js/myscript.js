@@ -1,42 +1,41 @@
-// create a variable that contains an array of all buttons with class name "like-btn"
-var button = document.getElementsByClassName("like-btn"); 
-
-// create an empty array to use later for sorting
 var list = [];
-
-// loop that goes through MOVIES array of objects and creates movie article HTML-code for each of them
-// while creating box, it puts inside data fetched from json file based on the [i] - index of element 
-// it also puts [i] as an id for LIKE-button and adds [i] to id of the like-counter div - green circle  
-// it also creates a new element in LIST array, which contains [i] and initial value of movies[i].likes property
 for (var i = 0; i < movies.length; i++) {
 	document.getElementById("article-container").innerHTML += `<article><img class="article-img" src="${movies[i].poster}" alt="moviePoster from JSON"><div class="article-text"><h3>${movies[i].name}</h3><p>${movies[i].info}</p><div class="like-box"><button id="${i}"class="like-btn"><span>Like</span><img src="img/like_green.png"></button><div id="like${i}" class="like-counter">${movies[i].likes}</div></div></article>`;
 	list.push([movies[i].likes, i]); // creates initial array to replace elements when button clicked
 }
+// create an empty array to use later for sorting
+// loop that goes through MOVIES array of objects and creates movie article HTML-code for each of them
+// while creating box, it puts inside data fetched from json file based on the [i] - index of element 
+// it also puts [i] as an id for LIKE-button and adds [i] to id of the like-counter div - green circle  
+// it also creates a new element in LIST array, which contains [i] and initial value of movies[i].likes property
 
-// loop that goes through BUTTON array of objects and hangs an EventListener on each of them
-// EventListener contains addLike function, which upon calling will transmit this button's attributes inside 
-// the function and gets it's id (which is [i]) to be able to know, which object from MOVIES array we refer to
+var button = document.getElementsByClassName("like-btn"); 
+// create a variable that contains an array of all buttons with class name "like-btn"
+
 for (var i = 0; i < button.length; i++) {
 	button[i].addEventListener("click", function(){addLike(this.getAttribute("id"))}, false);
 }
+// loop that goes through BUTTON array of objects and hangs an EventListener on each of them
+// EventListener contains addLike function, which upon calling will transmit this button's attributes inside 
+// the function and gets it's id (which is [i]) to be able to know, which object from MOVIES array we refer to
 
-// function that increases the value of movies[i].likes property for movie with index [i] when button is clicked
-// it contains a variable likesCircle, that accesses div element for output ("green circle")
 function addLike(i) {
 	movies[i].likes += 1; // increases number of likes after each button click
 	var likesCircle = document.getElementById(`like${i}`);
 	likesCircle.innerHTML = `${movies[i].likes}`; // changes the value displayed in green circle
 }
+// function that increases the value of movies[i].likes property for movie with index [i] when button is clicked
+// it contains a variable likesCircle, that accesses div element for output ("green circle")
 
-// eventListener on sorting button function to sort movies 
 var sortButton = document.getElementById("sort");
 sortButton.addEventListener("click", sortMovies, false);
+// eventListener on sorting button function to sort movies 
 
 // function for sorting movies from biggest to smallest by numer of likes
 function sortMovies() {
 	// replaces all items in LIST array for current values of movies[i].likes and [i]
 	for (var i = 0; i < movies.length; i++) {
-		list[i] = [movies[i].likes, i]; // Number(i) in testing was gtting ? 
+		list[i] = [movies[i].likes, i]; 
 	}
 
 	// sorting multidimensional array based on the value of first element in each sub array, 
