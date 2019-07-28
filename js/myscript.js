@@ -1,7 +1,10 @@
-var list = [];
+function renderBox (movieObject, i) {
+	return `<article><img class="article-img" src="${movieObject.poster}" alt="moviePoster from JSON"><div class="article-text"><h3>${movieObject.name}</h3><p>${movieObject.info}</p><div class="like-box"><button id="${i}"class="like-btn"><span>Like</span><img src="img/like_green.png"></button><div id="like${i}" class="like-counter">${movieObject.likes}</div></div></article>`;
+}
+// separate function to render one box, which is included into loop with rendering of all boxes
+
 for (var i = 0; i < movies.length; i++) {
-	document.getElementById("article-container").innerHTML += `<article><img class="article-img" src="${movies[i].poster}" alt="moviePoster from JSON"><div class="article-text"><h3>${movies[i].name}</h3><p>${movies[i].info}</p><div class="like-box"><button id="${i}"class="like-btn"><span>Like</span><img src="img/like_green.png"></button><div id="like${i}" class="like-counter">${movies[i].likes}</div></div></article>`;
-	list.push([movies[i].likes, i]); // creates initial array to replace elements when button clicked
+	document.getElementById("article-container").innerHTML += renderBox(movies[i], i);
 }
 // create an empty array to use later for sorting
 // loop that goes through MOVIES array of objects and creates movie article HTML-code for each of them
@@ -31,8 +34,8 @@ var sortButton = document.getElementById("sort");
 sortButton.addEventListener("click", sortMovies, false);
 // eventListener on sorting button function to sort movies 
 
-// function for sorting movies from biggest to smallest by numer of likes
 function sortMovies() {
+	var list = [];
 	// replaces all items in LIST array for current values of movies[i].likes and [i]
 	for (var i = 0; i < movies.length; i++) {
 		list[i] = [movies[i].likes, i]; 
@@ -52,11 +55,11 @@ function sortMovies() {
 	// index is re-writn upon every new cycle of loop
 	for (var i = 0; i < list.length; i++) {
 		var index = list[i][1];
-		document.getElementById("article-container").innerHTML += `<article><img class="article-img" src="${movies[index].poster}" alt="moviePoster from JSON"><div class="article-text"><h3>${movies[index].name}</h3><p>${movies[index].info}</p><div class="like-box"><button id="${index}"class="like-btn"><span>Like</span><img src="img/like_green.png"></button><div id="like${index}" class="like-counter">${movies[index].likes}</div></div></article>`;
+		document.getElementById("article-container").innerHTML += renderBox(movies[index], index);
 	}
 
 	// loop that goes through BUTTON array and hangs an EventListener on each after sorting rendering
-	// index is re-writn upon every new cycle of loop
+	// index is re-written upon every new cycle of loop
 	for (var i = 0; i < list.length; i++) {
 		var index = list[i][1];
 		button[index].addEventListener("click", function(){addLike(this.getAttribute("id"))}, false);
@@ -68,7 +71,7 @@ function sortMovies() {
 // console.log(movies[1].movieLikes); - testing connection between html / js / json files
 // console.log(typeof movies[1].movieLikes); - info about data type
 // console.log(button); - to see what stored inside this array
-
+// list.push([movies[i].likes, i]); // removed as unnecessary element in loop with initial box rendering
 // (inside addLike function)
 // console.log("hello from button " + i); - testing if [i] is transmitted 
 // console.log(movies[i].movieLikes); // testing if number of likes has increased 
@@ -81,3 +84,10 @@ function sortMovies() {
 // console.log("result of sorting is ", list);
 // var button = document.getElementsByClassName("like-btn"); removed, as unnecessary element
 // loop uses the initially  created button array and it is changed every time when content is rendered new
+// var list = []; moved inside of sorting functon
+
+// originally innerHtml in box rendering loop
+// `<article><img class="article-img" src="${movies[i].poster}" alt="moviePoster from JSON"><div class="article-text"><h3>${movies[i].name}</h3><p>${movies[i].info}</p><div class="like-box"><button id="${i}"class="like-btn"><span>Like</span><img src="img/like_green.png"></button><div id="like${i}" class="like-counter">${movies[i].likes}</div></div></article>`;
+
+// originally innerHTML in sorting function loop for re-rendering of new array
+// `<article><img class="article-img" src="${movies[index].poster}" alt="moviePoster from JSON"><div class="article-text"><h3>${movies[index].name}</h3><p>${movies[index].info}</p><div class="like-box"><button id="${index}"class="like-btn"><span>Like</span><img src="img/like_green.png"></button><div id="like${index}" class="like-counter">${movies[index].likes}</div></div></article>`;
