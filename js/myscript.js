@@ -6,7 +6,7 @@ function renderBox (movieObject, i) {
 for (var i = 0; i < movies.length; i++) {
 	document.getElementById("article-container").innerHTML += renderBox(movies[i], i);
 }
-// create an empty array to use later for sorting
+
 // loop that goes through MOVIES array of objects and creates movie article HTML-code for each of them
 // while creating box, it puts inside data fetched from json file based on the [i] - index of element 
 // it also puts [i] as an id for LIKE-button and adds [i] to id of the like-counter div - green circle  

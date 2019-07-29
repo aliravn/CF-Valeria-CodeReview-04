@@ -62,7 +62,8 @@ h2 {
   background: none;
   border: none;
   font-size: 2.5vw;
-  color: #d1cfcf; }
+  color: #d1cfcf;
+  cursor: pointer; }
   #sort span {
     font-size: 3vw; }
   #sort:hover {
@@ -114,7 +115,8 @@ article {
   align-items: center; }
   .like-box button {
     background: none;
-    border: none; }
+    border: none;
+    cursor: pointer; }
   .like-box span {
     margin: 0 0.3vw;
     font-size: 2.7vw;
